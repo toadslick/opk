@@ -3,3 +3,7 @@ body, html {
   color: #fff;
   font-size: 100px;
 }
+
+.highlight {
+  color: pink;
+}
