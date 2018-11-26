@@ -1,33 +1,33 @@
 var screens = [
   {
-    start: 3,
-    end: 8,
+    start: 9,
+    end: 16,
     lines: [[
-      { start: 0.25, text: "sip" },
-      { start: 0.5, text: "pin'" },
+      { start: 2.8, text: "sip" },
+      { start: 2.94, text: "pin'" },
       { text: " " },
-      { start: 0.75, text: "tro" },
-      { start: 1, text: "pi" },
-      { start: 1.25, text: "ca" },
-      { start: 1.5, text: "na" },
+      { start: 3.09, text: "tro" },
+      { start: 3.25, text: "pi" },
+      { start: 3.41, text: "ca" },
+      { start: 3.71, text: "na" },
     ], [
-      { start: 1.75, text: "in" },
+      { start: 4.97, text: "in" },
       { text: " " },
-      { start: 2, text: "a" },
+      { start: 5.13, text: "a" },
       { text: " " },
-      { start: 2.25, text: "co" },
-      { start: 2.5, text: "co" },
-      { start: 3, text: "nut" },
+      { start: 5.31, text: "co" },
+      { start: 5.46, text: "co" },
+      { start: 5.62, text: "nut" },
       { text: " " },
-      { start: 3.5, text: "ca" },
-      { start: 4, text: "ba" },
-      { start: 4.5, text: "na" },
+      { start: 5.78, text: "ca" },
+      { start: 5.96, text: "ba" },
+      { start: 6.26, text: "na" },
     ]]
   },
 ];
 
 var pauses = [
-  { start: 0, end: 4 },
+  { start: 0, end: 11.8 },
 ];
 
 var screenContainer = document.getElementById('karaoke-lyrics-container');
