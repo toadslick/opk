@@ -2,8 +2,33 @@ body, html {
   background: #000;
   color: #fff;
   font-size: 100px;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.highlight {
-  color: pink;
+#karaoke-lyrics-wrapper {
+  height: 100%;
+  width: 100%;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 100px;
+}
+
+#karaoke-lyrics-container {
+}
+
+.karaoke-lyrics-hidden {
+  position: absolute;
+  left: -9999px;
+}
+
+.karaoke-lyrics-segment {
+  display: inline;
+}
+
+.karaoke-lyrics-highlight {
+  color: chartreuse;
 }
