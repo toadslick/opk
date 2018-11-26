@@ -20,15 +20,38 @@ body, html {
 #karaoke-lyrics-container {
 }
 
-.karaoke-lyrics-hidden {
-  position: absolute;
-  left: -9999px;
+.karaoke-hidden {
+  display: none;
 }
 
 .karaoke-lyrics-segment {
   display: inline;
 }
 
-.karaoke-lyrics-highlight {
+.karaoke-highlight {
   color: chartreuse;
+}
+
+#karaoke-pause-container {
+  position: fixed;
+  left: 200px;
+  right: 200px;
+  top: 50px;
+  height: 50px;
+}
+
+.karaoke-pause-meter {
+  height: 100%;
+  border: 4px solid #fff;
+  border-radius: 8px;
+  padding: 6px;
+  /* overflow: hidden; */
+}
+
+.karaoke-pause-bar {
+  margin-right: auto;
+  height: 100%;
+  background: chartreuse;
+  width: 0;
+  transition: width 0.05s;
 }
