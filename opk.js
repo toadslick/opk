@@ -1,63 +1,58 @@
 var screens = [
   {
-    start: 9,
+    start: 11.2,
     end: 16,
-    lines: [[
-      { start: 2.8, text: "sip" },
-      { start: 2.94, text: "pin'" },
+    segments: [
+      { sec: 0.00, text: "sip" },
+      { sec: 0.15, text: "pin'" },
       { text: " " },
-      { start: 3.09, text: "tro" },
-      { start: 3.25, text: "pi" },
-      { start: 3.41, text: "ca" },
-      { start: 3.71, text: "na" },
-    ], [
-      { start: 4.97, text: "in" },
+      { sec: 0.14, text: "tro" },
+      { sec: 0.15, text: "pi" },
+      { sec: 0.17, text: "ca" },
+      { sec: 0.28, text: "na" },
+      { text: "\n"},
+      { sec: 1.30, text: "in" },
       { text: " " },
-      { start: 5.13, text: "a" },
+      { sec: 0.16, text: "a" },
       { text: " " },
-      { start: 5.31, text: "co" },
-      { start: 5.46, text: "co" },
-      { start: 5.62, text: "nut" },
+      { sec: 0.16, text: "co" },
+      { sec: 0.16, text: "co" },
+      { sec: 0.14, text: "nut" },
       { text: " " },
-      { start: 5.78, text: "ca" },
-      { start: 5.96, text: "ba" },
-      { start: 6.26, text: "na" },
-    ]]
+      { sec: 0.18, text: "ca" },
+      { sec: 0.16, text: "ba" },
+      { sec: 0.30, text: "na" },
+    ]
   },
 ];
 
 var pauses = [
-  { start: 0, end: 11.8 },
+  { start: 0, end: 11.2 },
 ];
 
-var screenContainer = document.getElementById('karaoke-lyrics-container');
-var pauseContainer = document.getElementById('karaoke-pause-container');
+var screenContainer = document.getElementById('kara-lyrics-container');
+var pauseContainer = document.getElementById('kara-pause-container');
 
 screens.forEach(function(screen) {
   var screenNode = document.createElement('div');
-  screenNode.classList.add('karoke-lyrics-screen');
+  screenNode.classList.add('kara-screen');
   screen.node = screenNode;
-  screen.lines.forEach(function(line) {
-    var lineNode = document.createElement('div');
-    lineNode.classList.add('karoke-lyrics-line');
-    screenNode.appendChild(lineNode);
-    line.forEach(function(segment) {
-      var segmentNode = document.createElement('div');
-      segmentNode.classList.add('karaoke-lyrics-segment');
-      segment.node = segmentNode;
-      segmentNode.innerText = segment.text;
-      lineNode.appendChild(segmentNode);
-    });
+  screen.segments.forEach(function(segment) {
+    var segmentNode = document.createElement('div');
+    segmentNode.classList.add('kara-segment');
+    segment.node = segmentNode;
+    segmentNode.innerText = segment.text;
+    screenNode.appendChild(segmentNode);
   });
   screenContainer.appendChild(screenNode);
 });
 
 pauses.forEach(function(pause) {
   var pauseNode = document.createElement('div');
-  pauseNode.classList.add('karaoke-pause-meter');
+  pauseNode.classList.add('kara-pause-meter');
   pause.node = pauseNode;
   barNode = document.createElement('div');
-  barNode.classList.add('karaoke-pause-bar');
+  barNode.classList.add('kara-pause-bar');
   pause.bar = barNode;
   pauseNode.appendChild(barNode);
   pauseContainer.appendChild(pauseNode);
@@ -69,16 +64,16 @@ var runLoop = function(time, browser, currentFrame, frameRate) {
     var startFrame = screen.start * frameRate;
     var endFrame = screen.end * frameRate;
     if (currentFrame < startFrame || currentFrame > endFrame) {
-      screen.node.classList.add('karaoke-hidden');
+      screen.node.classList.remove('kara-visible');
     } else {
-      screen.node.classList.remove('karaoke-hidden');
-      screen.lines.forEach(function(line) {
-        line.forEach(function(segment) {
-          var startFrame = (screen.start + segment.start) * frameRate;
-          if (startFrame <= currentFrame) {
-            segment.node.classList.add('karaoke-highlight');
-          }
-        });
+      screen.node.classList.add('kara-visible');
+      var segmentStartTime = screen.start;
+      screen.segments.forEach(function(segment) {
+        segmentStartTime += segment.sec || 0;
+        var startFrame = segmentStartTime * frameRate;
+        if (startFrame <= currentFrame) {
+          segment.node.classList.add('kara-highlight');
+        }
       });
     }
   });
@@ -87,12 +82,12 @@ var runLoop = function(time, browser, currentFrame, frameRate) {
     var startFrame = pause.start * frameRate;
     var endFrame = pause.end * frameRate;
     if (currentFrame < startFrame || currentFrame > endFrame) {
-      pause.node.classList.add('karaoke-hidden');
+      pause.node.classList.remove('kara-visible');
     } else {
-      pause.node.classList.remove('karaoke-hidden');
-      var duration = endFrame - startFrame;
+      pause.node.classList.add('kara-visible');
+      var sec = endFrame - startFrame;
       var progress = currentFrame - startFrame;
-      var ratio = Math.max(0, Math.min(1, progress / duration));
+      var ratio = Math.max(0, Math.min(1, progress / sec));
       pause.bar.style.width = Math.floor(ratio * 100) + "%";
     }
   });
