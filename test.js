@@ -6,8 +6,11 @@ var frameRate = 30 * speedMultiplier;
 var audio = document.getElementById('test-audio');
 audio.playbackRate = speedMultiplier;
 
+var timeDisplay = document.getElementById('test-current-time');
+
 var animate = function() {
 	runLoop(null, null, audio.currentTime * frameRate, frameRate);
+	timeDisplay.innerText = audio.currentTime;
 	window.requestAnimationFrame(animate);
 }
 window.requestAnimationFrame(animate);
