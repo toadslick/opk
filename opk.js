@@ -1,9 +1,9 @@
 var screens = [
   {
-    start: 11.2,
+    start: 10,
     end: 16,
     segments: [
-      { sec: 0.00, text: "sip" },
+      { sec: 1.32, text: "sip" },
       { sec: 0.15, text: "pin'" },
       { text: " " },
       { sec: 0.14, text: "tro" },
@@ -73,6 +73,8 @@ var runLoop = function(time, browser, currentFrame, frameRate) {
         var startFrame = segmentStartTime * frameRate;
         if (startFrame <= currentFrame) {
           segment.node.classList.add('kara-highlight');
+        } else {
+          segment.node.classList.remove('kara-highlight');
         }
       });
     }
@@ -93,4 +95,4 @@ var runLoop = function(time, browser, currentFrame, frameRate) {
   });
 };
 
-webvfx_add_to_frame = [runLoop];
+window.webvfx_add_to_frame = [runLoop];
