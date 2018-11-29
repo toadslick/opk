@@ -8,7 +8,7 @@ audio.playbackRate = speedMultiplier;
 
 var timeDisplay = document.getElementById('test-current-time');
 
-var animate = function() {
+var animate = function(n) {
 	runLoop(null, null, audio.currentTime * frameRate, frameRate);
 	timeDisplay.innerText = audio.currentTime;
 	window.requestAnimationFrame(animate);
