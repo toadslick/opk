@@ -1,5 +1,5 @@
 // Change to 1 for normal play speed.
-var speedMultiplier = 1;
+var speedMultiplier = 0.5;
 
 var runLoop = webvfx_add_to_frame[0];
 var frameRate = 30 * speedMultiplier;
@@ -10,7 +10,7 @@ audio.playbackRate = speedMultiplier;
 var timeDisplay = document.getElementById('test-current-time');
 
 // Skip animation frames to improve accuracy.
-var framesToSkip = 1;
+var framesToSkip = 4;
 var skippedFrameCount = 0;
 
 var animate = function(n) {
