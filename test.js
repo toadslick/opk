@@ -10,7 +10,7 @@ audio.playbackRate = speedMultiplier;
 var timeDisplay = document.getElementById('test-current-time');
 
 // Skip animation frames to improve accuracy.
-var framesToSkip = 3;
+var framesToSkip = 1;
 var skippedFrameCount = 0;
 
 var animate = function(n) {
