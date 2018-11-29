@@ -1,5 +1,5 @@
 // Change to 1 for normal play speed.
-var speedMultiplier = 0.5;
+var speedMultiplier = 1;
 
 var runLoop = webvfx_add_to_frame[0];
 var frameRate = 30 * speedMultiplier;
