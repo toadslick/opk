@@ -40,7 +40,7 @@ body, html {
 
 .kara-highlight {
   animation-name: segment-highlight;
-  animation-duration: 0.25s;
+  animation-duration: 0.4s;
   position: relative;
   color: chartreuse;
 }
