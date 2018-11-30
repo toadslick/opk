@@ -21,13 +21,13 @@ window.songData.lyrics.forEach(function(screen) {
       if (letterRegex.test(letter)) {
         letterNode.classList.add('kara-letter');
         letterNode.classList.add('kara-letter-' + letter);
-      } else if (letter === " ") {
-        letterNode.classList.add('kara-letter-space');
+      } else if (letter === "-") {
+        letterNode.classList.add('kara-letter');
+        letterNode.classList.add('kara-letter-dash');
       } else if (letter === "\n") {
         letterNode.classList.add('kara-line-break');
       } else {
-        letterNode.classList.add('kara-letter');        
-        letterNode.classList.add('kara-letter-misc');
+        letterNode.classList.add('kara-letter-space');
       }
       segmentNode.appendChild(letterNode);
     });
