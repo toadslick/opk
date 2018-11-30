@@ -1,5 +1,5 @@
 // TODO: change to 1 when done timing the lyrics.
-var speedMultiplier = 0.5;
+var speedMultiplier = 1;
 
 // Use the webvfx custom effect function
 // as the main thing called by requestAnimationFrame().
