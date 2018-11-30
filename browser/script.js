@@ -1,12 +1,16 @@
-// Change to 1 for normal play speed.
-var speedMultiplier = 1;
+// TODO: change to 1 when done timing the lyrics.
+var speedMultiplier = 0.5;
 
+// Use the webvfx custom effect function
+// as the main thing called by requestAnimationFrame().
 var runLoop = webvfx_add_to_frame[0];
 var frameRate = 30 * speedMultiplier;
 
+// Get the audio player.
 var audio = document.getElementById('test-audio');
 audio.playbackRate = speedMultiplier;
 
+// TODO: remove this when done timing the lyrics.
 var timeDisplay = document.getElementById('test-current-time');
 
 // Skip animation frames to improve accuracy.
