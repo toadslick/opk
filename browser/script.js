@@ -10,9 +10,6 @@ var frameRate = 30 * speedMultiplier;
 var audio = document.getElementById('test-audio');
 audio.playbackRate = speedMultiplier;
 
-// TODO: remove this when done timing the lyrics.
-var timeDisplay = document.getElementById('test-current-time');
-
 // Skip animation frames to improve accuracy.
 var framesToSkip = 4;
 var skippedFrameCount = 0;
@@ -23,7 +20,6 @@ var animate = function(n) {
 	} else {
 		skippedFrameCount = 0;
 		runLoop(null, null, audio.currentTime * frameRate, frameRate);
-		timeDisplay.innerText = audio.currentTime;
 	}
 	window.requestAnimationFrame(animate);
 }
