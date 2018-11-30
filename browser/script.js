@@ -24,3 +24,26 @@ var animate = function(n) {
 	window.requestAnimationFrame(animate);
 }
 window.requestAnimationFrame(animate);
+
+
+// Pause or play the audio.
+var togglePause = function() {
+	if (audio.paused) {
+		audio.play();
+	} else {
+		audio.pause();
+	}
+}
+
+// Pause or play the audio by clicking anywhere in the window.
+// Attach this event to the lyrics wrapper so that it doesn't catch
+// events that bubble from clicking the audio player.
+var wrapper = document.getElementById('kara-lyrics-wrapper');
+wrapper.addEventListener('mouseup', togglePause);
+
+// Pause or play the audio by hitting the space bar.
+window.addEventListener('keyup', function(event) {
+	if (event.key === " ") {
+		togglePause();
+	}
+});
