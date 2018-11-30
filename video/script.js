@@ -1,6 +1,8 @@
 var startDelay = 0.3;
 var endDelay = 0.3;
 
+var letterRegex = /[a-z]/;
+
 var screenContainer = document.getElementById('kara-lyrics-container');
 var pauseContainer = document.getElementById('kara-pause-container');
 
@@ -13,7 +15,23 @@ window.songData.lyrics.forEach(function(screen) {
     var segmentNode = document.createElement('div');
     segmentNode.classList.add('kara-segment');
     segment.node = segmentNode;
-    segmentNode.innerText = segment[0];
+
+    segment[0].toLowerCase().split('').forEach(function(letter) {
+      var letterNode = document.createElement('div');
+      if (letterRegex.test(letter)) {
+        letterNode.classList.add('kara-letter');
+        letterNode.classList.add('kara-letter-' + letter);
+      } else if (letter === " ") {
+        letterNode.classList.add('kara-letter-space');
+      } else if (letter === "\n") {
+        letterNode.classList.add('kara-line-break');
+      } else {
+        letterNode.classList.add('kara-letter');        
+        letterNode.classList.add('kara-letter-misc');
+      }
+      segmentNode.appendChild(letterNode);
+    });
+
     screenNode.appendChild(segmentNode);
     duration += segment[1] || 0;
   });

@@ -29,22 +29,6 @@ body, html {
   display: inline;
 }
 
-@keyframes segment-highlight {
-  0% {
-    top: 4px;
-  }
-  100% {
-    top: 0;
-  }
-}
-
-.kara-highlight {
-  animation-name: segment-highlight;
-  animation-duration: 0.4s;
-  position: relative;
-  color: chartreuse;
-}
-
 #kara-pause-container {
   position: fixed;
   left: 200px;
@@ -56,7 +40,7 @@ body, html {
 
 .kara-pause-meter {
   height: 100%;
-  border: 4px solid green;
+  border: 4px solid #ddd;
   padding: 6px;
   display: none;
 }
@@ -68,7 +52,77 @@ body, html {
 .kara-pause-bar {
   margin-right: auto;
   height: 100%;
-  background: green;
+  background: #ddd;
   width: 0;
   transition: width 0.05s;
 }
+
+.kara-letter {
+  height: 63px;
+  width: 44px;
+  display: inline-block;
+  background-image: url(letters.png);
+  background-repeat: no-repeat;
+  background-color: #ddd;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.kara-letter-misc {
+  background-image: none;
+  width: 14px;
+  height: 14px;
+  margin-bottom: 23px;
+}
+
+@keyframes segment-highlight {
+  0% {
+    top: 4px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+.kara-highlight .kara-letter {
+  animation-name: segment-highlight;
+  animation-duration: 0.4s;
+  position: relative;
+  background-color: yellow;
+}
+
+.kara-letter-space {
+  display: inline-block;
+  width: 30px;
+}
+
+.kara-line-break {
+  height: 40px;
+}
+
+.kara-letter-a { background-position:     0px 0 ;	 width: 42px;  }
+.kara-letter-b { background-position:   -44px 0 ;                }
+.kara-letter-c { background-position:   -90px 0 ;                }
+.kara-letter-d { background-position:  -136px 0 ;                }
+.kara-letter-e { background-position:  -182px 0 ;                }
+.kara-letter-f { background-position:  -228px 0 ;                }
+.kara-letter-g { background-position:  -274px 0 ;                }
+.kara-letter-h { background-position:  -320px 0 ;                }
+.kara-letter-i { background-position:  -372px 0 ;	 width: 25px;  }
+.kara-letter-j { background-position:  -399px 0 ;                }
+.kara-letter-k { background-position:  -445px 0 ;                }
+.kara-letter-l { background-position:  -491px 0 ;                }
+.kara-letter-m { background-position:  -537px 0 ;                }
+.kara-letter-n { background-position:  -583px 0 ;                }
+.kara-letter-o { background-position:  -629px 0 ;                }
+.kara-letter-p { background-position:  -675px 0 ;                }
+.kara-letter-q { background-position:  -721px 0 ;                }
+.kara-letter-r { background-position:  -767px 0 ;                }
+.kara-letter-s { background-position:  -813px 0 ;                }
+.kara-letter-t { background-position:  -865px 0 ;	 width: 38px;  }
+.kara-letter-u { background-position:  -905px 0 ;                }
+.kara-letter-v { background-position:  -951px 0 ;                }
+.kara-letter-w { background-position:  -997px 0 ;                }
+.kara-letter-x { background-position: -1043px 0 ;                }
+.kara-letter-y { background-position: -1089px 0 ;                }
+.kara-letter-z { background-position: -1135px 0 ;                }
