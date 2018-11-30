@@ -1,5 +1,5 @@
 var chorus = function(startSeconds) {
-	return [ startSeconds, [
+	return { start: startSeconds, startDelay: 0.3, endDelay: 0.1, segments: [
 		[ " ot "  ,       ],
 		[ " ot "  , 0.310 ],
 		[ " ot "  , 0.315 ],
@@ -21,7 +21,7 @@ var chorus = function(startSeconds) {
 		[ "pop "  , 0.180 ],
 		[ "ot"    , 0.300 ],
 		[ "ter"   , 0.160 ],
-	]];
+	]};
 };
 
 window.songData = {
@@ -32,7 +32,7 @@ window.songData = {
 	],
 
 	lyrics: [
-	  [ 11.32, [
+	  { start: 11.32, startDelay: 2, endDelay: 0.5, segments: [
 	    [ "sip"   ,       ],
 	    [ "ping " , 0.170 ],
 	    [ "tro"   , 0.165 ],
@@ -48,8 +48,8 @@ window.songData = {
 	    [ "ca"    , 0.155 ],
 	    [ "ba"    , 0.175 ],
 	    [ "na"    , 0.255 ],
-	  ]],
-	  [ 16.39, [
+	  ]},
+	  { start: 16.39, startDelay: 1, endDelay: 0.5, segments: [
 	    [ "floa"  ,       ],
 	    [ "ting " , 0.150 ],
 	    [ "on "   , 0.155 ],
@@ -63,8 +63,8 @@ window.songData = {
 	    [ "the "  , 0.150 ],
 	    [ "man"   , 0.180 ],
 	    [ "goes"  , 0.300 ],
-	  ]],
-	  [ 21.5, [
+	  ]},
+	  { start: 21.5, startDelay: 0.75, endDelay: 0.5, segments: [
 	    [ "hot"   ,       ],
 	    [ "ter "  , 0.140 ],
 	    [ "than " , 0.160 ],
@@ -78,8 +78,8 @@ window.songData = {
 	    [ "a"     , 0.130 ],
 	    [ "ga"    , 0.170 ],
 	    [ "ve"    , 0.310 ],
-	  ]],
-	  [ 27.0, [
+	  ]},
+	  { start: 27.0, startDelay: 1, endDelay: 0.5, segments: [
 	    [ "we "   ,       ],
 	    [ "just " , 0.165 ],
 	    [ "wan"   , 0.150 ],
@@ -100,8 +100,8 @@ window.songData = {
 	    [ "tsi "  , 0.15  ],
 	    [ "wave " , 0.165 ],
 	    [ "pool"  , 0.315 ],
-	  ]],
-	  [ 32.1, [
+	  ]},
+	  { start: 32.1, startDelay: 1, endDelay: 1, segments: [
 	    [ "je"    ,       ],
 	    [ "llo "  , 0.445 ],
 	    [ "shots ", 0.165 ],
@@ -126,8 +126,8 @@ window.songData = {
 	    [ "ot"    , 0.165 ],
 	    [ "ter "  , 0.155 ],
 	    [ "pop"   , 0.150 ],
-	  ]],
-	  [ 42.4, [
+	  ]},
+	  { start: 42.4, startDelay: 1, endDelay: 0.25, segments: [
 	    [ "high"  ,       ],
 	    [ "er "   , 0.445 ],
 	    [ "than " , 0.165 ],
@@ -157,12 +157,12 @@ window.songData = {
 	    [ "is "   , 0.180 ],
 	    [ "how "  , 0.155 ],
 	    [ "we"    , 0.160 ],
-	  ]],
+	  ]},
 	  chorus( 51.80 ),
 		chorus( 56.93 ),
 	  chorus( 62.10 ),
 		chorus( 67.43 ),
-	  [ 73.5, [
+	  { start: 73.5, startDelay: 1, endDelay: 0.5, segments: [
 	    [ "je"    ,       ],
 	    [ "llo "  , 0.455 ],
 	    [ "shots ", 0.160 ],
@@ -187,8 +187,8 @@ window.songData = {
 	    [ "ot"    , 0.165 ],
 	    [ "ter "  , 0.135 ],
 	    [ "pop"   , 0.160 ],
-	  ]],
-	  [ 83.8, [
+	  ]},
+	  { start: 83.8, startDelay: 1, endDelay: 0.5, segments: [
 	    [ "crui"  ,       ],
 	    [ "sing " , 0.145 ],
 	    [ "in "   , 0.155 ],
@@ -202,8 +202,8 @@ window.songData = {
 	    [ "the "  , 0.165 ],
 	    [ "sun"   , 0.180 ],
 	    [ "shine" , 0.305 ],
-	  ]],
-	  [ 88.9, [
+	  ]},
+	  { start: 88.9, startDelay: 1, endDelay: 0.5, segments: [
 	    [ "mel"   ,       ],
 	    [ "ting " , 0.145 ],
 	    [ "all"   , 0.160 ],
@@ -221,8 +221,8 @@ window.songData = {
 	    [ "let "  , 0.150 ],
 	    [ "eye"   , 0.180 ],
 	    [ "sight" , 0.315 ],
-	  ]],
-	  [ 93.8, [
+	  ]},
+	  { start: 93.8, startDelay: 0.5, endDelay: 0.5, segments: [
 	    [ "you "  ,       ],
 	    [ "and "  , 0.130 ],
 	    [ "me "   , 0.140 ],
@@ -244,8 +244,8 @@ window.songData = {
 	    [ "my "   , 0.150 ],
 	    [ "wave " , 0.155 ],
 	    [ "pool"  , 0.340 ],
-	  ]],
-	  [ 99.1, [
+	  ]},
+	  { start: 99.1, startDelay: 1, endDelay: 0.4, segments: [
 	    [ "tell "   ,       ],
 	    [ "all "    , 0.155 ],
 	    [ "your "   , 0.165 ],
@@ -268,8 +268,8 @@ window.songData = {
 	    [ "your "   , 0.165 ],
 	    [ "cake "   , 0.165 ],
 	    [ "too"     , 0.315 ],
-	  ]],
-	  [ 104.3, [
+	  ]},
+	  { start: 104.3, startDelay: 1, endDelay: 1, segments: [
 	    [ "je"    ,       ],
 	    [ "llo "  , 0.455 ],
 	    [ "shots ", 0.160 ],
@@ -294,8 +294,8 @@ window.songData = {
 	    [ "ot"    , 0.165 ],
 	    [ "ter "  , 0.135 ],
 	    [ "pop"   , 0.160 ],
-	  ]],
-	  [ 114.6, [
+	  ]},
+	  { start: 114.6, startDelay: 1, endDelay: 0.3, segments: [
 	    [ "high"  ,       ],
 	    [ "er "   , 0.445 ],
 	    [ "than " , 0.165 ],
@@ -325,14 +325,14 @@ window.songData = {
 	    [ "is "   , 0.180 ],
 	    [ "how "  , 0.155 ],
 	    [ "we"    , 0.160 ],
-	  ]],
+	  ]},
 		chorus( 124.10 ),
 		chorus( 129.23 ),
 		chorus( 134.40 ),
 		chorus( 139.53 ),
 		chorus( 144.80 ),
 		chorus( 149.93 ),
-		[ 156.0, [
+		{ start: 156.0, startDelay: 1, endDelay: 2, segments: [
 	    [ "je"    ,       ],
 	    [ "llo "  , 0.445 ],
 	    [ "shots ", 0.165 ],
@@ -362,6 +362,6 @@ window.songData = {
 			[ "is "   , 0.180 ],
 			[ "how "  , 0.155 ],
 			[ "we"    , 0.160 ],
-	  ]],
+	  ]},
 	],
 };

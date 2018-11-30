@@ -1,6 +1,3 @@
-var startDelay = 0.3;
-var endDelay = 0.3;
-
 var letterRegex = /[a-z]/;
 
 var screenContainer = document.getElementById('kara-lyrics-container');
@@ -11,7 +8,7 @@ window.songData.lyrics.forEach(function(screen) {
   screenNode.classList.add('kara-screen');
   screen.node = screenNode;
   var duration = 0;
-  screen[1].forEach(function(segment) {
+  screen.segments.forEach(function(segment) {
     var segmentNode = document.createElement('div');
     segmentNode.classList.add('kara-segment');
     segment.node = segmentNode;
@@ -32,7 +29,7 @@ window.songData.lyrics.forEach(function(screen) {
     screenNode.appendChild(segmentNode);
     duration += segment[1] || 0;
   });
-  screen.end = screen[0] + duration;
+  screen.end = screen.start + duration;
   screenContainer.appendChild(screenNode);
 });
 
@@ -50,14 +47,14 @@ window.songData.pauses.forEach(function(pause) {
 var runLoop = function(time, browser, currentFrame, frameRate) {
 
   window.songData.lyrics.forEach(function(screen) {
-    var startFrame = (screen[0] - startDelay) * frameRate;
-    var endFrame = (screen.end + endDelay) * frameRate;
+    var startFrame = (screen.start - screen.startDelay) * frameRate;
+    var endFrame = (screen.end + screen.endDelay) * frameRate;
     if (currentFrame < startFrame || currentFrame > endFrame) {
       screen.node.classList.remove('kara-visible');
     } else {
       screen.node.classList.add('kara-visible');
-      var segmentStartTime = screen[0];
-      screen[1].forEach(function(segment) {
+      var segmentStartTime = screen.start;
+      screen.segments.forEach(function(segment) {
         segmentStartTime += segment[1] || 0;
         var startFrame = segmentStartTime * frameRate;
         if (startFrame <= currentFrame) {
