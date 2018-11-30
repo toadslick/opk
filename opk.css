@@ -29,7 +29,19 @@ body, html {
   display: inline;
 }
 
+@keyframes segment-highlight {
+  0% {
+    top: 4px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
 .kara-highlight {
+  animation-name: segment-highlight;
+  animation-duration: 0.25s;
+  position: relative;
   color: chartreuse;
 }
 
