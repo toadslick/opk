@@ -32,7 +32,7 @@ window.songData = {
 	],
 
 	lyrics: [
-	  { start: 11.32, startDelay: 2, endDelay: 0.5, segments: [
+	  { start: 11.4, startDelay: 2, endDelay: 0.5, segments: [
 	    [ "sip"   ,       ],
 	    [ "ping " , 0.170 ],
 	    [ "tro"   , 0.165 ],
@@ -49,7 +49,7 @@ window.songData = {
 	    [ "ba"    , 0.175 ],
 	    [ "na"    , 0.255 ],
 	  ]},
-	  { start: 16.39, startDelay: 1, endDelay: 0.5, segments: [
+	  { start: 16.5, startDelay: 1, endDelay: 0.5, segments: [
 	    [ "floa"  ,       ],
 	    [ "ting " , 0.150 ],
 	    [ "on "   , 0.155 ],
@@ -64,7 +64,7 @@ window.songData = {
 	    [ "man"   , 0.180 ],
 	    [ "goes"  , 0.300 ],
 	  ]},
-	  { start: 21.5, startDelay: 0.75, endDelay: 0.5, segments: [
+	  { start: 21.7, startDelay: 0.75, endDelay: 0.5, segments: [
 	    [ "hot"   ,       ],
 	    [ "ter "  , 0.140 ],
 	    [ "than " , 0.160 ],
