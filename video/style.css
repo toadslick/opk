@@ -29,6 +29,8 @@ body, html {
   display: inline;
 }
 
+/* ------------ Progress meters for pauses ------------- */
+
 #kara-pause-container {
   position: fixed;
   left: 200px;
@@ -57,6 +59,8 @@ body, html {
   transition: width 0.05s;
 }
 
+/* ------------ Lettering ------------- */
+
 @keyframes segment-highlight {
   0% {
     top: 4px;
@@ -70,7 +74,7 @@ body, html {
   height: 63px;
   width: 44px;
   display: inline-block;
-  background-image: url(letters.png);
+  background-image: url(../images/letters.png);
   background-repeat: no-repeat;
   background-color: skyblue;
   margin-left: 3px;
@@ -89,7 +93,6 @@ body, html {
   display: inline-block;
   width: 30px;
 }
-
 
 .kara-letter-a { background-position:     0px 0 ;	 width: 42px;  }
 .kara-letter-b { background-position:   -44px 0 ;                }

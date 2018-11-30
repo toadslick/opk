@@ -35,7 +35,7 @@ var togglePause = function() {
 	}
 }
 
-// Pause or play the audio by clicking anywhere in the window.
+// Pause or play by clicking anywhere in the window.
 // Attach this event to the lyrics wrapper so that it doesn't catch
 // events that bubble from clicking the audio player.
 var wrapper = document.getElementById('kara-lyrics-wrapper');
@@ -45,5 +45,26 @@ wrapper.addEventListener('mouseup', togglePause);
 window.addEventListener('keyup', function(event) {
 	if (event.key === " ") {
 		togglePause();
+	}
+});
+
+// Pause or play by clicking the Sunfly image.
+var sunfly = document.getElementById('kara-sunfly');
+sunfly.addEventListener('mouseup', togglePause);
+
+// Hide the Sunfly image when the audio first plays or is seeked.
+var hideSunfly = function() {
+	sunfly.classList.add('kara-hidden');
+}
+var showSunfly = function() {
+	sunfly.classList.remove('kara-hidden');
+}
+audio.addEventListener('play', hideSunfly);
+audio.addEventListener('seeked', hideSunfly);
+
+// Show the Sunfly image when the audio finishes.
+audio.addEventListener('timeupdate', function(event) {
+	if (audio.currentTime >= audio.duration) {
+		showSunfly();
 	}
 });

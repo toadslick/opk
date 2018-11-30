@@ -4,4 +4,24 @@ audio {
 	left: 0;
 	right: 0;
 	width: 100%;
+	z-index: 9999;
+}
+
+/* ------------ Sunfly image ------------- */
+
+#kara-sunfly {
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-color: rgb(254, 255, 0);
+	background-image: url(../images/sunfly.png);
+	background-position: center center;
+	background-repeat: no-repeat;
+	z-index: 8888;
+}
+
+#kara-sunfly.kara-hidden {
+	display: none;
 }
