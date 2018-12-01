@@ -56,15 +56,12 @@ sunfly.addEventListener('mouseup', togglePause);
 var hideSunfly = function() {
 	sunfly.classList.add('kara-hidden');
 }
-var showSunfly = function() {
-	sunfly.classList.remove('kara-hidden');
-}
 audio.addEventListener('play', hideSunfly);
 audio.addEventListener('seeked', hideSunfly);
 
 // Show the Sunfly image when the audio finishes.
 audio.addEventListener('timeupdate', function(event) {
 	if (audio.currentTime >= audio.duration) {
-		showSunfly();
+		sunfly.classList.remove('kara-hidden');
 	}
 });
