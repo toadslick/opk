@@ -27,6 +27,7 @@ body, html {
 
 .kara-segment {
   display: inline;
+  position: relative
 }
 
 /* ------------ Progress meters for pauses ------------- */
@@ -61,15 +62,6 @@ body, html {
 
 /* ------------ Lettering ------------- */
 
-@keyframes segment-highlight {
-  0% {
-    top: 4px;
-  }
-  100% {
-    top: 0;
-  }
-}
-
 .kara-letter {
   height: 63px;
   width: 44px;
@@ -83,9 +75,6 @@ body, html {
 }
 
 .kara-highlight .kara-letter {
-  animation-name: segment-highlight;
-  animation-duration: 0.4s;
-  position: relative;
   background-color: yellow;
 }
 
