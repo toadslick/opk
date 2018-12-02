@@ -1,20 +1,20 @@
 var chorus = function(startSeconds) {
 	return { start: startSeconds, startDelay: 0.3, endDelay: 0.1, segments: [
-		[ " ot "  ,       ],
-		[ " ot "  , 0.310 ],
-		[ " ot "  , 0.315 ],
-		[ " ot "  , 0.320 ],
+		[ " ah "  ,       ],
+		[ " ah "  , 0.310 ],
+		[ " ah "  , 0.315 ],
+		[ " ah "  , 0.320 ],
 		[ "\n"    ,       ],
 		[ "ot"    , 0.325 ],
 		[ "ter "  , 0.135 ],
 		[ "pop"   , 0.190 ],
 		[ "\n"    ,       ],
-		[ " ot "  , 0.315 ],
-		[ " ot "  , 0.315 ],
-		[ " ot "  , 0.330 ],
-		[ " ot "  , 0.305 ],
-		[ " ot "  , 0.315 ],
-		[ " ot "  , 0.330 ],
+		[ " ah "  , 0.315 ],
+		[ " ah "  , 0.315 ],
+		[ " ah "  , 0.330 ],
+		[ " ah "  , 0.305 ],
+		[ " ah "  , 0.315 ],
+		[ " ah "  , 0.330 ],
 		[ "\n"    ,       ],
 		[ "ot"    , 0.330 ],
 		[ "ter "  , 0.130 ],
@@ -28,7 +28,7 @@ window.songData = {
 
 	pauses: [
 	  [ 0    , 11.2 ],
-	  [ 80.9 , 83.5 ],
+	  // [ 80.9 , 83.5 ],
 	],
 
 	lyrics: [
@@ -203,7 +203,7 @@ window.songData = {
 	    [ "sun"   , 0.180 ],
 	    [ "shine" , 0.305 ],
 	  ]},
-	  { start: 88.9, startDelay: 1, endDelay: 0.5, segments: [
+	  { start: 88.9, startDelay: 1, endDelay: 0.3, segments: [
 	    [ "mel"   ,       ],
 	    [ "ting " , 0.145 ],
 	    [ "all"   , 0.160 ],
@@ -222,7 +222,7 @@ window.songData = {
 	    [ "eye"   , 0.180 ],
 	    [ "sight" , 0.315 ],
 	  ]},
-	  { start: 93.8, startDelay: 0.5, endDelay: 0.5, segments: [
+	  { start: 93.8, startDelay: 0.9, endDelay: 0.4, segments: [
 	    [ "you "  ,       ],
 	    [ "and "  , 0.130 ],
 	    [ "me "   , 0.140 ],
@@ -245,7 +245,7 @@ window.songData = {
 	    [ "wave " , 0.155 ],
 	    [ "pool"  , 0.340 ],
 	  ]},
-	  { start: 99.1, startDelay: 1, endDelay: 0.4, segments: [
+	  { start: 99.1, startDelay: 1, endDelay: 0.5, segments: [
 	    [ "tell "   ,       ],
 	    [ "all "    , 0.155 ],
 	    [ "your "   , 0.165 ],
