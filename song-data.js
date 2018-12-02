@@ -28,7 +28,7 @@ window.songData = {
 
 	pauses: [
 	  [ 0    , 11.2 ],
-	  [ 80.9 , 83.5 ],
+	  // [ 80.9 , 83.5 ],
 	],
 
 	lyrics: [
@@ -202,7 +202,7 @@ window.songData = {
 	    [ "sun"   , 0.180 ],
 	    [ "shine" , 0.305 ],
 	  ]},
-	  { start: 88.9, startDelay: 1, endDelay: 0.5, segments: [
+	  { start: 88.9, startDelay: 1, endDelay: 0.3, segments: [
 	    [ "mel"   ,       ],
 	    [ "ting " , 0.145 ],
 	    [ "all"   , 0.160 ],
@@ -221,7 +221,7 @@ window.songData = {
 	    [ "eye"   , 0.180 ],
 	    [ "sight" , 0.315 ],
 	  ]},
-	  { start: 93.8, startDelay: 0.5, endDelay: 0.5, segments: [
+	  { start: 93.8, startDelay: 0.9, endDelay: 0.4, segments: [
 	    [ "you "  ,       ],
 	    [ "and "  , 0.130 ],
 	    [ "me "   , 0.140 ],
@@ -244,7 +244,7 @@ window.songData = {
 	    [ "wave " , 0.155 ],
 	    [ "pool"  , 0.340 ],
 	  ]},
-	  { start: 99.1, startDelay: 1, endDelay: 0.4, segments: [
+	  { start: 99.1, startDelay: 1, endDelay: 0.5, segments: [
 	    [ "tell "   ,       ],
 	    [ "all "    , 0.155 ],
 	    [ "your "   , 0.165 ],

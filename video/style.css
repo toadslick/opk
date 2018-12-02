@@ -15,6 +15,11 @@ body, html {
   vertical-align: middle;
   text-align: center;
   font-size: 100px;
+
+  /* preload letters image */
+  background-image: url(../images/letters.png);
+  background-repeat: no-repeat;
+  background-position: -9999px -9999px;
 }
 
 .kara-screen {
