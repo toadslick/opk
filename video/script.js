@@ -1,7 +1,20 @@
+var totalDuration = 167.784;
+var segmentAnimationDuration = 0.4;
 var letterRegex = /[a-z]/;
-
 var screenContainer = document.getElementById('kara-lyrics-container');
 var pauseContainer = document.getElementById('kara-pause-container');
+
+var segmentAnimation = function(startSeconds) {
+  var startPercent = startSeconds / totalDuration;
+  var endPercent = (startSeconds + segmentAnimationDuration) / totalDuration;
+  return '{' +
+    'start: ' + startPercent + ', ' +
+    'end: '   + endPercent   + ', ' +
+    'ease: "easeOutQuad", ' +
+    '0%: { top: "6px" }, ' +
+    '100%: { top: "0px" } ' +
+  '}';
+};
 
 window.songData.lyrics.forEach(function(screen) {
   var screenNode = document.createElement('div');
@@ -9,8 +22,14 @@ window.songData.lyrics.forEach(function(screen) {
   screen.node = screenNode;
   var duration = 0;
   screen.segments.forEach(function(segment) {
+    duration += segment[1] || 0;
+
     var segmentNode = document.createElement('div');
     segmentNode.classList.add('kara-segment');
+
+    segmentNode.classList.add('webvfx');
+    segmentNode.setAttribute('data-animate', segmentAnimation(screen.start + duration));
+
     segment.node = segmentNode;
 
     segment[0].toLowerCase().split('').forEach(function(letter) {
@@ -27,7 +46,6 @@ window.songData.lyrics.forEach(function(screen) {
     });
 
     screenNode.appendChild(segmentNode);
-    duration += segment[1] || 0;
   });
   screen.end = screen.start + duration;
   screenContainer.appendChild(screenNode);
