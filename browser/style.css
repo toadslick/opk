@@ -25,3 +25,17 @@ audio {
 #kara-sunfly.kara-hidden {
 	display: none;
 }
+
+@keyframes segment-highlight {
+  0% {
+    top: 4px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+.kara-segment.kara-highlight {
+  animation-name: segment-highlight;
+  animation-duration: 0.4s;
+}
